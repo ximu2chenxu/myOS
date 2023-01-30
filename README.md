@@ -1,7 +1,7 @@
-# myOS
-
+# myOS  
+  
 ## Manjaro  
-sudo dd bs=4M if=./manjaro.iso of=/dev/sdc status=progress oflag=sync 
+sudo dd bs=4M if=./manjaro.iso of=/dev/sdc status=progress oflag=sync  
 
 ## eOS  
 adb shell touch /data/adb/shamiko/whitelist  
