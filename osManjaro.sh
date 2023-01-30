@@ -1,5 +1,4 @@
 #!/bin/bash
-#sudo dd bs=4M if=./manjaro.iso of=/dev/sdc status=progress oflag=sync 
 
 sudo tee /etc/sudoers.d/$USER <<< "$USER ALL=(ALL) NOPASSWD: ALL"
 sudo chmod 440 /etc/sudoers.d/$USER
