@@ -201,6 +201,7 @@ source $HOME/.zshrc
 echo "alias runredroid=\"docker run -itd --privileged --pull always -v $HOME/data:/data -p 5555:5555 redroid/redroid:13.0.0-latest --memory-swappiness=0 androidboot.hardware=mt6891 ro.secure=0 ro.boot.hwc=GLOBAL ro.ril.oem.imei=861503068361145 ro.ril.oem.imei1=861503068361145 ro.ril.oem.imei2=861503068361148 ro.ril.miui.imei0=861503068361148 ro.product.manufacturer=Xiaomi ro.build.product=chopin redroid.width=720 redroid.height=1280 \"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo "alias redroid=\"adb connect localhost:5555; scrcpy -s localhost:5555\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 
+echo "alias of=\"docker run -v $HOME/Documents/WorkSpace:/home/sudofoam -it opencfd/openfoam-dev su - sudofoam\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo "alias of2112=\"docker run -v $HOME/Documents/WorkSpace:/home/sudofoam -it opencfd/openfoam-dev:2112 su - sudofoam\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo "alias of10=\"docker run -v $HOME/Documents/WorkSpace:/home/openfoam -it openfoam/openfoam10-paraview56\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 mkdir $HOME/Documents/WorkSpace
