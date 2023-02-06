@@ -25,6 +25,7 @@ sudo pamac upgrade -a --force-refresh --no-confirm
 sudo pamac install --no-confirm archlinux-keyring
 sudo pamac install --no-confirm gvfs-smb samba kdenetwork-filesharing manjaro-settings-samba
 sudo pamac install --no-confirm base-devel ninja openmpi tbb cmake make python python-numpy
+sudo pamac install --no-confirm ttf-hannom noto-fonts noto-fonts-extra noto-fonts-emoji noto-fonts-cjk adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-hk-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-hk-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts adobe-source-serif-fonts wqy-zenhei wqy-microhei
 sudo pamac install --no-confirm texstudio texlive-core texlive-bibtexextra texlive-fontsextra texlive-formatsextra texlive-latexextra texlive-pictures texlive-pstricks texlive-publishers texlive-science texlive-humanities texlive-langchinese texlive-langjapanese
 sudo pamac install --no-confirm libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl alsa-lib libglvnd
 sudo pamac install --no-confirm fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-chinese-addons
