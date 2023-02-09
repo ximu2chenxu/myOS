@@ -67,6 +67,7 @@ sudo pamac install --no-confirm wireshark-qt
 sudo pamac install --no-confirm doxygen
 sudo pamac install --no-confirm graphviz
 sudo pamac install --no-confirm blender
+sudo pamac install --no-confirm freecad
 sudo pamac install --no-confirm torbrowser-launcher
 sudo pamac install --no-confirm nginx; sudo systemctl enable --now nginx
 sudo pamac install --no-confirm syncthing; sudo systemctl enable --now syncthing@$USER
