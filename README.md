@@ -4,6 +4,11 @@
 sudo dd bs=4M if=./manjaro.iso of=/dev/sdc status=progress oflag=sync  
 
 ## eOS  
+adb reboot bootloader
+fastboot flash recovery recovery.img
+fastboot reboot
+adb sideload rom.zip
+adb sideload magisk.zip
 adb shell touch /data/adb/shamiko/whitelist  
 adb shell sed -i 's/blacklist/whitelist/g' /data/clash/clash.config  
 adb shell sed -i 's/ipv6: true/ipv6: false/g' /data/clash/template
