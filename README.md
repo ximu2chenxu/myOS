@@ -6,7 +6,7 @@ sudo dd bs=4M if=./manjaro.iso of=/dev/sdc status=progress oflag=sync
 ## eOS  
 adb reboot bootloader  
 fastboot flash recovery recovery.img  
-fastboot reboot  
+fastboot reboot recovery  
 adb sideload rom.zip  
 adb sideload magisk.zip  
 adb shell touch /data/adb/shamiko/whitelist  
