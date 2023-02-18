@@ -145,7 +145,7 @@ dns:\n\
    - 223.5.5.5\n\
    - 119.29.29.98\n\
   nameserver:\n\
-   - https://cn-east.lele233.com/dns-query\n\
+   - https://cn-east.iqiqzz.com/dns-query\n\
   enhanced-mode: fake-ip\n\
   fake-ip-range: 198.18.0.1/16\n\
   fallback:\n\
@@ -154,18 +154,26 @@ dns:\n\
    geoip: true\n\
    geoip-code: CN\n\
 proxies:\n\
-  - {}
+    {name: \"ss\", type: ss, port: 8388, server: 0.0.0.0, cipher: chacha20-ietf-poly1305, password: password}\n\
+    {name: \"vm\", type: vmess, port: 443, network: ws, alterId: 0, cipher: auto, tls: true, server: cdn.cdn, uuid: uuid, ws-opts: {path: /path}}\n\
+    {name: \"ip\", type: vmess, port: 443, network: ws, alterId: 0, cipher: auto, tls: true, server: 0.0.0.0, uuid: uuid, ws-opts: {path: /path, headers: {Host: cdn.cdn}}}\n\
 proxy-groups:\n\
   - name: \"relay\"\n\
     type: relay\n\
     proxies:\n\
-      - vmess\n\
+      - vm\n\
       - ss\n\
+proxy-providers:\n\
+  providerI:\n\
+    type: http\n\
+    url: \"url\"\n\
+    interval: 600\n\
+    path: ./providerI.yaml
 rules:\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
-  - DOMAIN-KEYWORD,linkedin,sgV\n\
-  - MATCH,sgV\n\
+  - DOMAIN-KEYWORD,linkedin,vm\n\
+  - MATCH,vm\n\
 " | tee $HOME/.config/clash/config.yaml
 if [ "$geoLocation" -gt 0 ]; then
     git clone -b gh-pages --depth 1 https://gitclone.com/github.com/Dreamacro/clash-dashboard $HOME/.config/clash/clash-dashboard
