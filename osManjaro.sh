@@ -132,14 +132,14 @@ allow-lan: false\n\
 bind-address: '*'\n\
 mode: rule\n\
 log-level: info\n\
-ipv6: true\n\
+ipv6: false\n\
 external-controller: 127.0.0.1:9090\n\
 external-ui: clash-dashboard\n\
 secret: '0000'\n\
 dns:\n\
   enable: true\n\
   listen: 0.0.0.0:53\n\
-  ipv6: true\n\
+  ipv6: false\n\
   default-nameserver:\n\
    - 9.9.9.9\n\
    - 223.5.5.5\n\
