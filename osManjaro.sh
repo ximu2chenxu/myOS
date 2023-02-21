@@ -216,3 +216,14 @@ echo "alias dof2112=\"docker run -v $HOME/Documents/WorkSpace:/home/sudofoam -it
 echo "alias dof10=\"docker run -v $HOME/Documents/WorkSpace:/home/openfoam -it openfoam/openfoam10-paraview56\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 mkdir $HOME/Documents/WorkSpace
 sudo chmod -R 777 $HOME/Documents/WorkSpace
+wget -P $HOME/Downloads https://dl.openfoam.com/source/v2212/OpenFOAM-2112.tgz
+wget -P $HOME/Downloads https://dl.openfoam.com/source/v2212/ThirdParty-v2112.tgz
+tar -zxvf $HOME/Downloads/OpenFOAM*.tgz
+tar -zxvf $HOME/Downloads/ThirdParty*.tgz
+rm -rf $HOME/Downloads/*.tgz
+mkdir $HOME/openfoam
+mv -f $HOME/Downloads/OpenFOAM* $HOME/openfoam/
+mv -f $HOME/Downloads/ThirdParty* $HOME/openfoam/
+source ~/openfoam/OpenFOAM-v2112/etc/bashrc
+cd $HOME/openfoam/OpenFOAM-v2112
+./Allwmake -j -s -q -l
