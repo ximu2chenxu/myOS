@@ -227,3 +227,4 @@ mv -f $HOME/Downloads/ThirdParty* $HOME/openfoam/
 source ~/openfoam/OpenFOAM-v2112/etc/bashrc
 cd $HOME/openfoam/OpenFOAM-v2112
 ./Allwmake -j -s -q -l
+echo "alias of=\"source $HOME/openfoam/OpenFOAM-v2212/etc/bashrc\"" | tee -a $HOME/.bashrc $HOME/.zshrc
