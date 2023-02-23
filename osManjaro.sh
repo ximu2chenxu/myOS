@@ -211,20 +211,21 @@ source $HOME/.zshrc
 echo "alias dredroid=\"docker run -itd --privileged --pull always -v $HOME/data:/data -p 5555:5555 redroid/redroid:13.0.0-latest --memory-swappiness=0 androidboot.hardware=mt6891 ro.secure=0 ro.boot.hwc=GLOBAL ro.ril.oem.imei=861503068361145 ro.ril.oem.imei1=861503068361145 ro.ril.oem.imei2=861503068361148 ro.ril.miui.imei0=861503068361148 ro.product.manufacturer=Xiaomi ro.build.product=chopin redroid.width=720 redroid.height=1280 \"" | tee -a $HOME/.bashrc $HOME/.zshrc
 echo "alias redroid=\"adb connect localhost:5555; scrcpy -s localhost:5555\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 
-echo "alias dof=\"docker run -v $HOME/Documents/WorkSpace:/home/sudofoam -it opencfd/openfoam-dev su - sudofoam\"" | tee -a $HOME/.bashrc $HOME/.zshrc
-echo "alias dof2112=\"docker run -v $HOME/Documents/WorkSpace:/home/sudofoam -it opencfd/openfoam-dev:2112 su - sudofoam\"" | tee -a $HOME/.bashrc $HOME/.zshrc
-echo "alias dof10=\"docker run -v $HOME/Documents/WorkSpace:/home/openfoam -it openfoam/openfoam10-paraview56\"" | tee -a $HOME/.bashrc $HOME/.zshrc
-mkdir $HOME/Documents/WorkSpace
-sudo chmod -R 777 $HOME/Documents/WorkSpace
-wget -P $HOME/Downloads https://dl.openfoam.com/source/v2212/OpenFOAM-2112.tgz
-wget -P $HOME/Downloads https://dl.openfoam.com/source/v2212/ThirdParty-v2112.tgz
-tar -zxvf $HOME/Downloads/OpenFOAM*.tgz
-tar -zxvf $HOME/Downloads/ThirdParty*.tgz
-rm -rf $HOME/Downloads/*.tgz
+openfoamComVersion=2112
+echo "alias dof10=\"docker run -v $HOME/Documents/ofSpace:/home/openfoam -it openfoam/openfoam10-paraview510\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+echo "alias dof$openfoamComVersion=\"docker run -v $HOME/Documents/ofSpace:/home/sudofoam -it opencfd/openfoam-dev:$openfoamComVersion su - sudofoam\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+mkdir $HOME/Documents/ofSpace
+sudo chmod -R 777 $HOME/Documents/ofSpace
+wget -P $HOME/Downloads https://dl.openfoam.com/source/v$openfoamComVersion/OpenFOAM-v$openfoamComVersion.tgz
+wget -P $HOME/Downloads https://dl.openfoam.com/source/v$openfoamComVersion/ThirdParty-v$openfoamComVersion.tgz
+tar -zxvf $HOME/Downloads/OpenFOAM-v$openfoamComVersion.tgz
+tar -zxvf $HOME/Downloads/ThirdParty-v$openfoamComVersion.tgz
+rm -rf $HOME/Downloads/OpenFOAM-v$openfoamComVersion.tgz
+rm -rf $HOME/Downloads/ThirdParty-v$openfoamComVersion.tgz
 mkdir $HOME/openfoam
-mv -f $HOME/Downloads/OpenFOAM* $HOME/openfoam/
-mv -f $HOME/Downloads/ThirdParty* $HOME/openfoam/
-source ~/openfoam/OpenFOAM-v2112/etc/bashrc
-cd $HOME/openfoam/OpenFOAM-v2112
+mv -f $HOME/Downloads/OpenFOAM-v$openfoamComVersion $HOME/openfoam/
+mv -f $HOME/Downloads/ThirdParty-v$openfoamComVersion $HOME/openfoam/
+source ~/openfoam/OpenFOAM-v$openfoamComVersion/etc/bashrc
+cd $HOME/openfoam/OpenFOAM-v$openfoamComVersion
 ./Allwmake -j -s -q -l
-echo "alias of=\"source $HOME/openfoam/OpenFOAM-v2212/etc/bashrc\"" | tee -a $HOME/.bashrc $HOME/.zshrc
+echo "alias of$openfoamComVersion=\"source $HOME/openfoam/OpenFOAM-v$openfoamComVersion/etc/bashrc\"" | tee -a $HOME/.bashrc $HOME/.zshrc
