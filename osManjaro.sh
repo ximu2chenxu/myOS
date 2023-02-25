@@ -98,6 +98,7 @@ user_pref(\"network.proxy.socks_remote_dns\", true);\n\
 user_pref(\"media.ffmpeg.vaapi.enabled\", true);\n\
 user_pref(\"media.ffvpx.enabled\", false);\n\
 user_pref(\"media.rdd-vpx.enabled\", false);\n\
+user_pref(\"media.peerconnection.enabled\", false);\n\
 user_pref(\"media.av1.enabled\", false);\n\
 user_pref(\"browser.startup.homepage\", \"about:blank\");\n\
 " | tee $ffUserRelease/user.js
