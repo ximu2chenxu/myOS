@@ -18,3 +18,4 @@ wget $(curl -s https://api.github.com/repos/topjohnwu/Magisk/releases/latest | g
 wget $(curl -s https://api.github.com/repos/taamarin/ClashforMagisk/releases/latest | grep browser_download_url | grep zip | cut -d'"' -f4)
 wget $(curl -s https://api.github.com/repos/LSPosed/LSPosed.github.io/releases/latest | grep browser_download_url | grep zip | cut -d'"' -f4)
 wget $(curl -s https://api.github.com/repos/fcitx5-android/fcitx5-android/releases/latest | grep browser_download_url | grep apk | grep v8a | cut -d'"' -f4)
+wget $(curl -s https://api.github.com/repos/wuhgit/CustomPinyinDictionary/releases/latest | grep browser_download_url | grep tar | cut -d'"' -f4)
