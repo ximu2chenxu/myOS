@@ -19,6 +19,6 @@ adb shell sed -i 's/blacklist/whitelist/g' /data/clash/clash.config
 adb shell sed -i 's/ipv6: true/ipv6: false/g' /data/clash/template  
 adb shell 'echo foundation.e.apps | tee -a /data/clash/packages.list'  
 adb shell 'echo foundation.e.browser | tee -a /data/clash/packages.list'  
-adb install $(ls | grep apk)
-adb push $(ls | grep zip) /sdcard/Download/
-adb push $(ls | grep gict) /sdcard/Download/
+adb install $(ls | grep apk)  
+adb push $(ls | grep zip) /sdcard/Download/  
+adb push $(ls | grep gict) /sdcard/Download/  
