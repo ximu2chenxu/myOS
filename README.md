@@ -14,6 +14,7 @@ wget $(curl -s https://api.github.com/repos/taamarin/ClashforMagisk/releases/lat
 wget $(curl -s https://api.github.com/repos/LSPosed/LSPosed.github.io/releases/latest | grep browser_download_url | grep zip | cut -d'"' -f4)  
 wget $(curl -s https://api.github.com/repos/fcitx5-android/fcitx5-android/releases/latest | grep browser_download_url | grep apk | grep v8a | cut -d'"' -f4)  
 wget $(curl -s https://api.github.com/repos/wuhgit/CustomPinyinDictionary/releases/latest | grep browser_download_url | grep tar | cut -d'"' -f4); tar -zxvf $(ls | grep tar); rm -rf *.tar.gz  
+wget $(curl -s https://api.github.com/repos/InfinityLoop1308/AnimePipe/releases/latest | grep browser_download_url | grep apk | cut -d'"' -f4)  
 adb install $(ls | grep apk)  
 adb push $(ls | grep zip) /sdcard/Download/  
 adb push $(ls | grep gict) /sdcard/Download/  
