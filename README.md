@@ -23,3 +23,4 @@ adb shell sed -i 's/blacklist/whitelist/g' /data/clash/clash.config
 adb shell sed -i 's/ipv6: true/ipv6: false/g' /data/clash/template  
 adb shell 'echo foundation.e.apps | tee -a /data/clash/packages.list'  
 adb shell 'echo foundation.e.browser | tee -a /data/clash/packages.list'  
+adb shell 'echo InfinityLoop1309.NewPipeEnhanced | tee -a /data/clash/packages.list'  
