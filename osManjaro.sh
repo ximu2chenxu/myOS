@@ -115,7 +115,7 @@ source $HOME/.zshrc
 
 sudo pamac install --no-confirm docker
 if [ "$geoLocation" -gt 0 ]; then
-    echo -e '{\n "registry-mirrors": ["http://hub-mirror.c.163.com","https://mirror.ccs.tencentyun.com"] \n}' | sudo tee /etc/docker/daemon.json && sudo systemctl restart docker
+    echo -e '{\n "registry-mirrors": ["https://hub-mirror.c.163.com","https://mirror.baidubce.com"] \n}' | sudo tee /etc/docker/daemon.json && sudo systemctl restart docker
 fi
 sudo systemctl daemon-reload
 sudo systemctl enable docker
@@ -165,11 +165,11 @@ proxy-groups:\n\
       - vm\n\
       - ss\n\
 proxy-providers:\n\
-  providerI:\n\
+  providerA:\n\
     type: http\n\
     url: \"url\"\n\
     interval: 600\n\
-    path: ./providerI.yaml
+    path: ./providerA.yaml
 rules:\n\
   - GEOIP,CN,DIRECT,no-resolve\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
