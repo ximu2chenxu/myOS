@@ -5,6 +5,7 @@ sudo chmod 440 /etc/sudoers.d/$USER
 
 balooctl suspend
 balooctl disable
+echo "alias ll=\"ls -al\"" | tee -a $HOME/.bashrc $HOME/.zshrc
 sed -i '3a [Keyboard]\nNumLock=0\n' $HOME/.config/kcminputrc
 echo -e "[Daemon]\nAutolock=false\nLockOnResume=false" | tee $HOME/.config/kscreenlockerrc
 sudo sed -i 's/RefreshPeriod = ./RefreshPeriod = 0/g' /etc/pamac.conf
