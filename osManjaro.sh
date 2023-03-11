@@ -172,9 +172,9 @@ proxy-providers:\n\
     interval: 600\n\
     path: ./providerA.yaml
 rules:\n\
-  - GEOIP,CN,DIRECT,no-resolve\n\
   - DOMAIN-SUFFIX,cn,DIRECT\n\
-  - DOMAIN-KEYWORD,linkedin,vm\n\
+  - DOMAIN-SUFFIX,it,vm\n\
+  - GEOIP,CN,DIRECT\n\
   - MATCH,vm\n\
 " | tee $HOME/.config/clash/config.yaml
 if [ "$geoLocation" -gt 0 ]; then
