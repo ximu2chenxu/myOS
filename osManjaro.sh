@@ -137,7 +137,7 @@ log-level: info\n\
 ipv6: false\n\
 external-controller: 127.0.0.1:9090\n\
 external-ui: clash-dashboard\n\
-secret: '0000'\n\
+secret: 'secret'\n\
 dns:\n\
   enable: true\n\
   listen: 0.0.0.0:53\n\
