@@ -143,11 +143,11 @@ dns:\n\
   listen: 0.0.0.0:53\n\
   ipv6: false\n\
   default-nameserver:\n\
-   - 9.9.9.9\n\
    - 223.5.5.5\n\
    - 119.29.29.98\n\
   nameserver:\n\
-   - https://cn-east.iqiqzz.com/dns-query\n\
+   - https://dns.alidns.com/dns-query\n\
+   - https://doh.pub/dns-query\n\
   enhanced-mode: fake-ip\n\
   fake-ip-range: 198.18.0.1/16\n\
   fallback:\n\
