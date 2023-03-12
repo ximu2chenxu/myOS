@@ -12,7 +12,7 @@ fastboot flash recovery recovery.img; read -p "Press enter to continue (waiting:
 fastboot reboot recovery; read -p "Press enter to continue (waiting: fastboot reboot recovery)"  
 adb sideload rom.zip; read -p "Press enter to continue (waiting: adb sideload rom.zip)"  
 adb sideload magisk.zip; read -p "Press enter to continue (waiting: adb sideload magisk.zip)"  
-adb install $(ls | grep -E 'apk'); adb push $(ls | grep -E 'zip') /sdcard/Download/; read -p "Press enter to continue (waiting: modules)"  
+adb install $(ls | grep apk); adb push $(ls | grep zip) /sdcard/Download/; read -p "Press enter to continue (waiting: modules)"  
 adb shell touch /data/adb/shamiko/whitelist; adb reboot; read -p "Press enter to continue (waiting: shamiko)"  
 wget $(curl -s https://api.github.com/repos/fcitx5-android/fcitx5-android/releases/latest | grep browser_download_url | grep apk | grep v8a | cut -d'"' -f4)  
 wget $(curl -s https://api.github.com/repos/wuhgit/CustomPinyinDictionary/releases/latest | grep browser_download_url | grep tar | cut -d'"' -f4); tar -zxvf $(ls | grep tar); rm -rf *.tar.gz  
