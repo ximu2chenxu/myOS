@@ -19,6 +19,7 @@ adb shell mkdir /data/adb/shamiko
 adb shell touch /data/adb/shamiko/whitelist  
 read -p "Press enter to continue (waiting: modules)"  
 wget $(curl -s https://api.github.com/repos/fcitx5-android/fcitx5-android/releases/latest | grep browser_download_url | grep apk | grep v8a | cut -d'"' -f4)  
+wget $(curl -s https://api.github.com/repos/pppscn/SmsForwarder/releases/latest | grep browser_download_url | grep apk | grep v8a | cut -d'"' -f4)  
 wget $(curl -s https://api.github.com/repos/wuhgit/CustomPinyinDictionary/releases/latest | grep browser_download_url | grep tar | cut -d'"' -f4); tar -zxvf $(ls | grep tar); rm -rf *.tar.gz  
 wget $(curl -s https://api.github.com/repos/InfinityLoop1308/AnimePipe/releases/latest | grep browser_download_url | grep apk | cut -d'"' -f4)  
 adb install $(ls | grep -E 'apk' | grep -v 'Magisk')  
